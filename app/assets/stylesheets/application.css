@@ -16,7 +16,7 @@
 
 
  body {
-    background: rgba(0, 0, 0, .15) image-url("/assets/me.jpg") no-repeat center center fixed;
+    background: rgba(0, 0, 0, .15) url("/assets/me.jpg") no-repeat center center fixed;
     background-blend-mode: darken;
     -webkit-background-size: cover;
     -moz-background-size: cover;
