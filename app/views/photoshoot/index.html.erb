@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<% @all_shoots.each do |shoot| %>
+    <%= label_tag shoot.title %>
+    <%= label_tag shoot.date %>
+    <%= image_tag shoot.cover_image.variant(resize_to_limit: [500, 500]).processed %>
+    <br/>
+<% end %>
+<h1><%= @all_shoots.to_json %></h1>
+
+</body>
+</html>
