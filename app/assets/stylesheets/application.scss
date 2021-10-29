@@ -48,3 +48,12 @@
     25%  { transform: translate(0, 4px); }
     100%   { transform: translate(0, 0px); }   
 }
+
+.zoom {
+    transition: transform .2s;
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.01); 
+  }
