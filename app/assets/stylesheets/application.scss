@@ -57,3 +57,12 @@
   .zoom:hover {
     transform: scale(1.01); 
   }
+
+  a, a:visited, a:hover, a:active {
+    color: inherit;
+    
+  }
+
+  a {
+    text-decoration: none !important;
+  }
