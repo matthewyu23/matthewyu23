@@ -19,7 +19,10 @@
         <div class="column">
             <% if (partitioned_list.length() > 0) %>
                 <% partitioned_list[0].each do |shoot| %>
-                    <%= image_tag shoot.cover_image%>
+                <div class="container">
+                    <%= link_to image_tag(shoot.cover_image), photoshoot_index_path(shoot) %>
+                    <%= label_tag shoot.title%>
+                </div>
                 <% end %>
             <% end %>
         </div>
