@@ -24,4 +24,10 @@ class PhotoshootController < ApplicationController
         end
 
     end
+
+    def show
+        print(params)
+        @photoshoot = Photoshoot.find(params[:id])
+
+    end
 end

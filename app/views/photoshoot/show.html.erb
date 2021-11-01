@@ -12,16 +12,15 @@
 <div class="text-center text-white">
     <h1 class="display-3 very-bold bit-of-shadow">Shot on Sony A6400, Sigma 30mm f/1.4</h1>
 </div>
-<% partitioned_list = @all_shoots.to_a.in_groups(3, false).to_a %>
+<% partitioned_list = @photoshoot.images.to_a.in_groups(3, false).to_a %>
 
 <div class="container-fluid">
     <div class="row">
         <div class="column">
             <% if (partitioned_list.length() > 0) %>
-                <% partitioned_list[0].each do |shoot| %>
+                <% partitioned_list[0].each do |img| %>
                 <div class="container">
-                    <%= link_to image_tag(shoot.cover_image), photoshoot_show_path(:id => shoot.id) %>
-                    <%= label_tag shoot.title%>
+                    <%= image_tag img%>
                 </div>
                 <% end %>
             <% end %>
@@ -29,26 +28,24 @@
 
         <div class="column">
             <% if (partitioned_list.length() > 1) %>
-                <% partitioned_list[1].each do |shoot| %>
+                <% partitioned_list[1].each do |img| %>
                 <div class="container">
-                    <%= link_to image_tag(shoot.cover_image), photoshoot_show_path(:id => shoot.id) %>
-                    <%= label_tag shoot.title%>
+                    <%= image_tag img%>
                 </div>
                 <% end %>
             <% end %>
         </div>
-
 
         <div class="column">
             <% if (partitioned_list.length() > 2) %>
-                <% partitioned_list[2].each do |shoot| %>
+                <% partitioned_list[2].each do |img| %>
                 <div class="container">
-                    <%= link_to image_tag(shoot.cover_image), photoshoot_show_path(:id => shoot.id) %>
-                    <%= label_tag shoot.title%>
+                    <%= image_tag img%>
                 </div>
                 <% end %>
             <% end %>
         </div>
+
     </div>
 
 </div>
