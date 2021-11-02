@@ -10,13 +10,20 @@ class PhotoshootController < ApplicationController
     end
 
     def create
-     
+        print("HHAHAHAHA")
+        print(params)
+
+        photoshoot_params = params.require(:photoshoot).permit(:title, :date, :cover_image)
+        @photoshoot = Photoshoot.create!(photoshoot_params)
+        @photoshoot.cover_image.attach(params[:cover_image])
+
+        @photoshoot.images.attach(params[:images])
+
        
         begin
-            photoshoot_params = params.require(:photoshoot).permit(:title, :date, :cover_image)
-            @photoshoot = Photoshoot.create(photoshoot_params)
-            @photoshoot.cover_image.attach(params[:cover_image])
-            @photoshoot.images.attach(params[:images])
+            
+            
+            
         rescue StandardError
             redirect_to photoshoot_new_path()
         else
@@ -29,5 +36,10 @@ class PhotoshootController < ApplicationController
         print(params)
         @photoshoot = Photoshoot.find(params[:id])
 
+    end
+
+
+    def photoshoot_params
+        params.require(:photoshoot).permit(:title, :date, :cover_image, :images[])
     end
 end
