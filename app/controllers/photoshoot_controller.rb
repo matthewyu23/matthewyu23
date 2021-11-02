@@ -10,18 +10,18 @@ class PhotoshootController < ApplicationController
     end
 
     def create
-        print("HHAHAHAHA")
-        print(params)
-
-        photoshoot_params = params.require(:photoshoot).permit(:title, :date, :cover_image)
-        @photoshoot = Photoshoot.create!(photoshoot_params)
-        @photoshoot.cover_image.attach(params[:cover_image])
-
-        @photoshoot.images.attach(params[:images])
 
        
+       
         begin
-            
+            if (params[:photoshoot][:password] == "88888888")
+                photoshoot_params = params.require(:photoshoot).permit(:title, :date, :cover_image)
+                @photoshoot = Photoshoot.create!(photoshoot_params)
+                @photoshoot.cover_image.attach(params[:cover_image])
+                @photoshoot.images.attach(params[:images])
+            else
+                return redirect_to photoshoot_new_path()
+            end
             
             
         rescue StandardError
