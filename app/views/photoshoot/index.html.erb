@@ -23,7 +23,7 @@
                 <% partitioned_list[0].each do |shoot| %>
                 <div class="container">
                     <%= link_to image_tag(shoot.cover_image), photoshoot_show_path(:id => shoot.id) %>
-                    <%= label_tag shoot.title%>
+
                 </div>
                 <% end %>
             <% end %>
