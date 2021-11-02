@@ -14,6 +14,9 @@
     <h1 class="display-3 very-bold bit-of-shadow"><%= @photoshoot.title %></h1>
     <h3 class="display-5 bit-of-shadow"><%= @photoshoot.date %></h3>
 </div>
+<div class="text-center">
+    <%= link_to 'Back', :back, class: 'btn btn-secondary'%>
+</div>
 <% partitioned_list = @photoshoot.images.to_a.in_groups(3, false).to_a %>
 <% print("LOLLLLL") %>
 <% @photoshoot.images.each do |x| %>
