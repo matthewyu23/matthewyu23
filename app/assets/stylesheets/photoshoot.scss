@@ -46,3 +46,23 @@
     }
   }
   
+body {
+  background: rgba(0, 0, 0, .15) image-url("japan.jpg") no-repeat center center fixed;
+  background-blend-mode: darken;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.very-bold {
+    font-weight: normal;
+}
+
+.bit-of-shadow {
+    text-shadow: 0px 0px 6px #000000;
+}
+
+.tiny-bit-of-shadow {
+    text-shadow: 0px 0px 6px #000000;
+}
